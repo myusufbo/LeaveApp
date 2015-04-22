@@ -67,10 +67,10 @@ public class MainActivity extends ActionBarActivity {
                 .withAccountHeader(headerResult)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_leave_apply).withIcon(FontAwesome.Icon.faw_calendar).withIdentifier(0),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_approve).withIcon(FontAwesome.Icon.faw_angle_double_right).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_relieve).withIcon(FontAwesome.Icon.faw_angellist).withIdentifier(2),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_my_leave).withIcon(FontAwesome.Icon.faw_adjust).withIdentifier(3)
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_my_leave).withIcon(FontAwesome.Icon.faw_calendar).withIdentifier(0),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_leave_apply).withIcon(FontAwesome.Icon.faw_calendar).withIdentifier(1),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_approve).withIcon(FontAwesome.Icon.faw_angellist).withIdentifier(2),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_relieve).withIcon(FontAwesome.Icon.faw_ambulance).withIdentifier(3)
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -79,24 +79,15 @@ public class MainActivity extends ActionBarActivity {
                         if (drawerItem instanceof Nameable) {
                             getSupportActionBar().setTitle(((Nameable) drawerItem).getNameRes());
                             Fragment fragment = null;
-                            if (drawerItem.getIdentifier() == 0) {
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                               // startActivity(new Intent(MainActivity.this,CandidateList.class));
-                            } else if (drawerItem.getIdentifier() == 1) {
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                                //startActivity(new Intent(MainActivity.this, PollingStationActivity.class));
+                            if (drawerItem.getIdentifier() == 1) {
+                               // Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(MainActivity.this, Apply.class));
                             } else if (drawerItem.getIdentifier() == 2) {
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                                //startActivity(new Intent(MainActivity.this, Map.class));
+                 //              Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(MainActivity.this, Approve.class));
                             } else if (drawerItem.getIdentifier() == 3) {
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                                //startActivity(new Intent(MainActivity.this, NearestVenue.class));
-                            } else if (drawerItem.getIdentifier() == 4) {
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                                //startActivity(new Intent(MainActivity.this, ShareActivity.class));
-                            } else if (drawerItem.getIdentifier() == 5) {
-                                //fragment = new Info1();
-                                Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(MainActivity.this, Relieve.class));
                             }
                             if (fragment != null) {
                                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -109,7 +100,7 @@ public class MainActivity extends ActionBarActivity {
                 })
                 .withFireOnInitialOnClick(true)
 
-                .withSelectedItem(5)
+                .withSelectedItem(0)
                 .build();
         
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);

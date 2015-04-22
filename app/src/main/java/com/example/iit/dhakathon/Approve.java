@@ -22,19 +22,19 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 
-public class Apply extends ActionBarActivity {
-    Drawer.Result result;
-    AccountHeader.Result headerResult;
+public class Approve extends ActionBarActivity {
+    private Drawer.Result result;
+    private AccountHeader.Result headerResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apply);
+        setContentView(R.layout.activity_approve);
 
         initDrawer(savedInstanceState);
     }
+    private void initDrawer(Bundle savedInstanceState){
 
-    private void initDrawer(Bundle savedInstanceState) {
-        {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
@@ -72,16 +72,16 @@ public class Apply extends ActionBarActivity {
                                 Fragment fragment = null;
                                 if (drawerItem.getIdentifier() == 0) {
                                     //Toast.makeText(getBaseContext(), "On Drawer Created", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(Apply.this, MainActivity.class));
-                                }/* else if (drawerItem.getIdentifier() == 1) {
+                                    startActivity(new Intent(Approve.this,MainActivity.class));
+                                } else if (drawerItem.getIdentifier() == 1) {
+                                    //Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(Approve.this, Apply.class));
+                                }/* else if (drawerItem.getIdentifier() == 2) {
                                     Toast.makeText(getBaseContext(),"On Drawer Created" , Toast.LENGTH_LONG).show();
-                                    //startActivity(new Intent(MainActivity.this, PollingStationActivity.class));
-                                } */ else if (drawerItem.getIdentifier() == 2) {
-                                   // Toast.makeText(getBaseContext(), "On Drawer Created", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(Apply.this, Approve.class));
-                                } else if (drawerItem.getIdentifier() == 3) {
+                                    //startActivity(new Intent(MainActivity.this, Map.class));
+                                } */ else if (drawerItem.getIdentifier() == 3) {
                                     //Toast.makeText(getBaseContext(), "On Drawer Created", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(Apply.this, Relieve.class));
+                                    startActivity(new Intent(Approve.this, Relieve.class));
                                 }
                                 if (fragment != null) {
                                     FragmentManager fragmentManager = getSupportFragmentManager();
@@ -94,20 +94,20 @@ public class Apply extends ActionBarActivity {
                     })
                     .withFireOnInitialOnClick(true)
 
-                    .withSelectedItem(1)
+                    .withSelectedItem(2)
                     .build();
 
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeButtonEnabled(false);
             result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
         }
-    }
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_apply, menu);
+        getMenuInflater().inflate(R.menu.menu_approve, menu);
         return true;
     }
 

@@ -32,5 +32,8 @@
 <string name="info2"> জালভোট প্রদানে জোর করা আইনত দন্দনীয়- ভোট কেন্দ্রে কোন পদপ্রার্থী বা তার সমর্থকবৃন্দগণ স্ব-স্ব দলের ভোটের জন্য ভোটারদের ভয় দেখানো, বিভিন্ন ধরনের প্রলোভোন দেখানো ইত্যাদি সম্পূর্ণভাবে নিষিদ্ধ । </string>
     <string name="title_activity_polling_station">PollingStationActivity</string>
     <string name="title_activity_push_result">PushResultActivity</string>
+    <string name="title_activity_apply">Apply</string>
+    <string name="title_activity_approve">Approve</string>
+    <string name="title_activity_relieve">Relieve</string>
 
 </resources>
